@@ -8,6 +8,7 @@
 {
   imports = [
     ./rules.nix
+    ../noctalia.nix
   ];
 
   xdg.configFile = {
@@ -19,10 +20,6 @@
       source = ../../dotfiles/niri/binds.kdl;
       target = "niri/binds.kdl";
     };
-  };
-  programs.noctalia = {
-    enable = true;
-    systemd.enable = true;
   };
   wayland.windowManager.niri = {
     enable = true;
