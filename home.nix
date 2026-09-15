@@ -60,6 +60,8 @@
     pkgs.zsh-powerlevel10k
     pkgs.kdePackages.kate
     pkgs.obsidian
+    pkgs.krita
+    pkgs.qiv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -102,7 +104,7 @@
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed-signers";
     };
     signing.format = "ssh";
-    signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH.pub";
+    signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH";
     signing.signByDefault = true;
     };
 
@@ -157,7 +159,17 @@
       window.opacity = 0.6;
     };
   };
+  programs.mpv = {
+  enable = true;
 
+    package = (
+      pkgs.mpv.override {
+        mpv-unwrapped = pkgs.mpv-unwrapped.override {
+          ffmpeg = pkgs.ffmpeg-full;
+        };
+      }
+    );
+  };
   services.kdeconnect = {
     enable = true;
     indicator = true;
