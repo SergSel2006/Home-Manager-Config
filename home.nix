@@ -99,9 +99,10 @@
     settings = {
       user.name = "SergSel2006";
       user.email = "sergsel2006@mail.ru";
+      gpg.ssh.allowedSignersFile = "~/.config/git/allowed-signers";
     };
     signing.format = "ssh";
-    signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH";
+    signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH.pub";
     signing.signByDefault = true;
     };
 
