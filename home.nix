@@ -59,7 +59,7 @@
     pkgs.meslo-lgs-nf
     pkgs.zsh-powerlevel10k
     pkgs.kdePackages.kate
-    # pkgs.obsidian
+    pkgs.obsidian
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -100,7 +100,10 @@
       user.name = "SergSel2006";
       user.email = "sergsel2006@mail.ru";
     };
-  };
+    signing.format = "ssh";
+    signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH";
+    signing.signByDefault = true;
+    };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
