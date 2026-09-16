@@ -5,6 +5,6 @@ let
   Laptop-NixOS = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKUhDAiCkMQlER8X8SaOF+2w3059dzqYnPsQTwduPeDC";
   systems = [ Laptop-NixOS ];
 in {
-  "syncthing-cert.age".publicKeys = [ sergsel ];
-  "syncthing-key.age".publicKeys = [ sergsel ];
+  "syncthing-cert.age".publicKeys = [ Laptop-NixOS ];
+  "syncthing-key.age".publicKeys = [ Laptop-NixOS ];
 }
