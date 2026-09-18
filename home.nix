@@ -62,6 +62,8 @@
     pkgs.obsidian
     pkgs.krita
     pkgs.qiv
+    pkgs.easyeffects
+    pkgs.vkbasalt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

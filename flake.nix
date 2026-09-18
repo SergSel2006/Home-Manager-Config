@@ -31,7 +31,6 @@
         modules = [
           ./home.nix
           agenix.homeManagerModules.default
-
         ];
 
         # Optionally use extraSpecialArgs
