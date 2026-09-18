@@ -5,9 +5,15 @@
     enable = true;
     localBinInPath = true;
     autostart.enable = true;
-    configFile."git-signers" = {
-      source = ../dotfiles/allowed-signers;
-      target = "git/allowed-signers";
+    configFile = {
+      "git-signers" = {
+        source = ../dotfiles/allowed-signers;
+        target = "git/allowed-signers";
+      };
+      "vkBasalt" = {
+        source = ../dotfiles/vkBasalt.conf;
+        target = "vkBasalt/vkBasalt.conf"
+      }
     };
     dataFile = {
       "arch-tan" = {
@@ -21,6 +27,10 @@
       "galaxy" = {
         source = ../data/wallpapers/galaxy.png;
         target = "wallpapers/galaxy.png";
+      };
+      "reshade" = {
+        source = ../data/reshade;
+        taget = "reshade";
       };
     };
   };
