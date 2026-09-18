@@ -12,8 +12,8 @@
       };
       "vkBasalt" = {
         source = ../dotfiles/vkBasalt.conf;
-        target = "vkBasalt/vkBasalt.conf"
-      }
+        target = "vkBasalt/vkBasalt.conf";
+      };
     };
     dataFile = {
       "arch-tan" = {
@@ -30,7 +30,7 @@
       };
       "reshade" = {
         source = ../data/reshade;
-        taget = "reshade";
+        target = "reshade";
       };
     };
   };
