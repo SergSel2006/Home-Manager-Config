@@ -4,7 +4,7 @@
   programs.noctalia.settings.bar = {
     default = {
       capsule = true;
-      center = ["group:g6"];
+      center = [ "group:g6" ];
       end = [
         "group:g7"
         "group:g2"

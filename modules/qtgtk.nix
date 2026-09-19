@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: let
+{ config, pkgs, ... }:
+let
   qtct_settings = {
     Appearance = {
       icon_theme = "Papirus-Dark";
@@ -45,7 +46,11 @@ in
     enable = true;
     gtk3.enable = true;
     theme.name = "adw-gtk3-dark";
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
-    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
   };
 }

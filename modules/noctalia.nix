@@ -8,12 +8,18 @@
     enable = true;
     systemd.enable = true;
     settings = {
-      audio = { enable-sounds = true; };
+      audio = {
+        enable-sounds = true;
+      };
       calendar = {
         enabled = true;
       };
       idle = {
-        behavior_order = [ "lock" "screen-off" "lock-and-suspend" ];
+        behavior_order = [
+          "lock"
+          "screen-off"
+          "lock-and-suspend"
+        ];
         behavior.lock = {
           action = "lock";
           enabled = true;
@@ -30,7 +36,9 @@
           timeout = 150.0;
         };
       };
-      notification = { history_retention_hours = 72; };
+      notification = {
+        history_retention_hours = 72;
+      };
       shell = {
         external_ip_enabled = true;
         font_family = "Adwaita Sans";
@@ -47,8 +55,27 @@
         mode = "dark";
         source = "community";
         templates = {
-          builtin_ids = [ "alacritty" "btop" "cava" "gtk3" "gtk4" "kcolorscheme" "niri" "qt" ];
-          community_ids = [ "pywalfox" "telegram" "libreoffice" "neovim" "fastfetch" "obs" "papirus-icons" "bat" "fzf" ];
+          builtin_ids = [
+            "alacritty"
+            "btop"
+            "cava"
+            "gtk3"
+            "gtk4"
+            "kcolorscheme"
+            "niri"
+            "qt"
+          ];
+          community_ids = [
+            "pywalfox"
+            "telegram"
+            "libreoffice"
+            "neovim"
+            "fastfetch"
+            "obs"
+            "papirus-icons"
+            "bat"
+            "fzf"
+          ];
         };
       };
       wallpaper.directory = "${config.xdg.dataHome}/wallpapers";

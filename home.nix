@@ -175,7 +175,7 @@
     };
   };
   programs.mpv = {
-  enable = true;
+    enable = true;
 
     package = (
       pkgs.mpv.override {
