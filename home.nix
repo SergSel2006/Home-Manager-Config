@@ -204,6 +204,11 @@
     autostart = true;
   };
 
+  services.udiskie = {
+    enable = true;
+    tray = "never";
+  };
+
   services.syncthing = {
     enable = true;
     cert = config.age.secrets.syncthing-cert.path;
