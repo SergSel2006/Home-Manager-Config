@@ -46,6 +46,12 @@
               title = "Ход операции";
             };
           }
+          {
+            match._props = {
+              app-id = "pcmanfm-qt";
+              title = "Копирование файлов";
+            };
+          }
         ];
         default-floating-position._props = {
           x = 10;
@@ -53,6 +59,12 @@
           relative-to = "top-right";
         };
         open-focused = false;
+        open-floating = true;
+      };
+    }
+    {
+      window-rule = {
+        match._props = { title = "OpenSSH Authentication Passphrase request"; };
         open-floating = true;
       };
     }
