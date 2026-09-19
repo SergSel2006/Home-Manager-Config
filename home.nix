@@ -143,6 +143,7 @@
   home.sessionVariables = {
     VISUAL = "kate -b";
     EDITOR = "nvim";
+    SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
   };
 
   # Let Home Manager install and manage itself.
