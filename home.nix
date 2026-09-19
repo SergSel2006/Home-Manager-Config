@@ -108,7 +108,19 @@
     signing.format = "ssh";
     signing.key = "${config.home.homeDirectory}/.ssh/ssh_keys/SSH";
     signing.signByDefault = true;
+  };
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "noctalia";
     };
+  };
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    icons = "auto";
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -129,8 +141,6 @@
   home.sessionVariables = {
     VISUAL = "kate -b";
     EDITOR = "nvim";
-    XCURSOR_SIZE = "32";
-    # QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   # Let Home Manager install and manage itself.
@@ -171,6 +181,15 @@
         };
       }
     );
+  };
+
+  home.shellAliases = {
+    l = "eza -alh";
+    cat = "bat";
+    grep = "grep --color=auto";
+    egrep = "egrep --color=auto";
+    fgrep = "fgrep --color=auto";
+    zgrep = "zgrep --color=auto";
   };
   services.kdeconnect = {
     enable = true;
