@@ -1,6 +1,9 @@
 { config, ... }:
 
 {
+  imports = [
+    ./noctalia-bars.nix
+  ];
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
@@ -40,7 +43,7 @@
         panel.transparency_mode = "glass";
       };
       theme = {
-        community_palette = "Catppuccin Mocha Lavender";
+        community_palette = "Catppuccin Mocha Blue";
         mode = "dark";
         source = "community";
         templates = {
@@ -49,6 +52,12 @@
         };
       };
       wallpaper.directory = "${config.xdg.dataHome}/wallpapers";
+      plugins.enabled = [
+        "yocraft/qrcode"
+        "rylos/syncthing"
+        "aristides/udiskie"
+        "noctalia/screen_recorder"
+      ];
     };
   };
 }

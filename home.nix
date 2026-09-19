@@ -64,6 +64,8 @@
     pkgs.qiv
     pkgs.easyeffects
     pkgs.vkbasalt
+    pkgs.lxqt.lxqt-openssh-askpass
+    pkgs.udiskie
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -146,6 +148,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   home.shell.enableShellIntegration = true;
+  programs.command-not-found.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -185,7 +188,7 @@
 
   home.shellAliases = {
     l = "eza -alh";
-    cat = "bat";
+    cat = "bat -pp";
     grep = "grep --color=auto";
     egrep = "egrep --color=auto";
     fgrep = "fgrep --color=auto";
