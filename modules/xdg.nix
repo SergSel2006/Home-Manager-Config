@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
   xdg = {
@@ -33,5 +33,11 @@
         target = "reshade";
       };
     };
+    autostart.entries = [
+      "${pkgs.retroshare}/share/applications/retroshare.desktop"
+      "${pkgs.steam}/share/applications/steam.desktop"
+      "${pkgs.telegram-desktop}/share/applications/org.telegram.desktop.desktop"
+      "${pkgs.easyeffects}/share/applications/com.github.wwmm.easyeffects.desktop"
+    ];
   };
 }

@@ -172,7 +172,7 @@
     enable = true;
     settings = {
       general.import = [ "${config.home.homeDirectory}/.config/alacritty/themes/noctalia.toml" ];
-      window.opacity = 0.6;
+      window.opacity = 0.65;
     };
   };
   programs.mpv = {
