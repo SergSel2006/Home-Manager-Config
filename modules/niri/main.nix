@@ -9,13 +9,14 @@
   imports = [
     ./rules.nix
     ../noctalia.nix
+    ./animations.nix
   ];
 
   xdg.configFile = {
-    "animations" = {
-      source = ../../dotfiles/niri/animations.kdl;
-      target = "niri/animations.kdl";
-    };
+    # "animations" = {
+    #   source = ../../dotfiles/niri/animations.kdl;
+    #   target = "niri/animations.kdl";
+    # };
     "binds" = {
       source = ../../dotfiles/niri/binds.kdl;
       target = "niri/binds.kdl";
@@ -67,7 +68,6 @@
     };
     extraConfig = ''
       include "${config.xdg.configHome}/niri/binds.kdl"
-      include "${config.xdg.configHome}/niri/animations.kdl"
       include optional=true "${config.xdg.configHome}/niri/noctalia.kdl"
     '';
   };
