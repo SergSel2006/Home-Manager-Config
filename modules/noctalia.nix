@@ -85,6 +85,11 @@
         "aristides/udiskie"
         "noctalia/screen_recorder"
       ];
+      widget = {
+        workspaces = {
+          label_source = "name";
+        };
+      };
     };
   };
 }

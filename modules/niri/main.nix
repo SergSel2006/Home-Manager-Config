@@ -64,6 +64,15 @@
             variable-refresh-rate = { };
           };
         }
+        {
+          workspace._args = [ "󰻞 Чатики" ];
+        }
+        {
+          workspace._args = [ "󰝚 Музыка" ];
+        }
+        {
+          workspace._args = [ "󰺷 Игры" ];
+        }
       ];
     };
     extraConfig = ''

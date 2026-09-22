@@ -66,6 +66,8 @@
     pkgs.vkbasalt
     pkgs.lxqt.lxqt-openssh-askpass
     pkgs.udiskie
+    pkgs.gvfs
+    pkgs.ffmpegthumbnailer
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

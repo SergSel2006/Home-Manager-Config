@@ -82,6 +82,33 @@
       };
     }
     {
+      window-rule = {
+        match._props = {
+          at-startup = true;
+          app-id = "retroshare";
+        };
+        open-on-workspace._args = [ "󰻞 Чатики" ];
+      };
+    }
+    {
+      window-rule = {
+        match._props = {
+          at-startup = true;
+          app-id = "org.telegram.desktop";
+        };
+        open-on-workspace._args = [ "󰻞 Чатики" ];
+      };
+    }
+    {
+      window-rule = {
+        match._props = {
+          at-startup = true;
+          app-id = "steam";
+        };
+        open-on-workspace._args = [ "󰺷 Игры" ];
+      };
+    }
+    {
       layer-rule = {
         _children = [
           {
