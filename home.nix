@@ -52,6 +52,7 @@
     pkgs.unzip
     pkgs.fzf
     pkgs.nix-search-tv
+    pkgs.ffmpeg
   ];
 
   home.file = { };
