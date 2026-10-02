@@ -14,6 +14,10 @@
         source = ../dotfiles/vkBasalt.conf;
         target = "vkBasalt/vkBasalt.conf";
       };
+      "mpv" = {
+        source = ../dotfiles/mpv.conf;
+        target = "mpv/mpv.conf";
+      };
     };
     dataFile = {
       "arch-tan" = {
