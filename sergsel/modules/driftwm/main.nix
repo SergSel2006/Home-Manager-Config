@@ -23,6 +23,7 @@ let
   };
 in
 {
+  imports = [ ../noctalia/noctalia.nix ];
   # Generating configs in nix to spite original flake
   xdg.configFile = {
     "config" = {
