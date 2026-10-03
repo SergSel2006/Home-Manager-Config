@@ -6,7 +6,7 @@
 
 {
   imports = [
-    ../common/modules/qtgtk.nix
+    ../common/main.nix
     modules/niri/main.nix
     modules/xdg.nix
   ];
@@ -28,8 +28,6 @@
     pkgs.lxqt.pcmanfm-qt
     pkgs.lxqt.lxqt-archiver
     pkgs.telegram-desktop
-    pkgs.adwaita-fonts
-    pkgs.adw-gtk3
     pkgs.pywalfox-native
     pkgs.libreoffice
     pkgs.qbittorrent
@@ -48,9 +46,6 @@
     pkgs.gvfs
     pkgs.ffmpegthumbnailer
     pkgs.retroarch-full
-    pkgs.zip
-    pkgs.unzip
-    pkgs.fzf
     pkgs.nix-search-tv
     pkgs.ffmpeg
     pkgs.squeekboard
@@ -70,17 +65,8 @@
       };
     };
   };
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    enableGitIntegration = true;
-    enableZshIntegration = true;
-  };
   programs.git = {
-    enable = true;
     settings = {
-      user.name = "SergSel2006";
-      user.email = "sergsel2006@mail.ru";
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed-signers";
     };
     signing.format = "ssh";
@@ -97,6 +83,7 @@
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
+    enableBashIntegration = true;
     icons = "auto";
   };
 
@@ -136,17 +123,6 @@
       window.opacity = 0.65;
     };
   };
-  programs.mpv = {
-    enable = true;
-
-    package = (
-      pkgs.mpv.override {
-        mpv-unwrapped = pkgs.mpv-unwrapped.override {
-          ffmpeg = pkgs.ffmpeg-full;
-        };
-      }
-    );
-  };
 
   home.shellAliases = {
     l = "eza -alh";
@@ -160,7 +136,6 @@
     enable = true;
     indicator = true;
   };
-  programs.neovim.enable = true;
   programs.lutris = {
     enable = true;
   };
