@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   configuration = {
     window_placement = "auto";
@@ -9,8 +9,7 @@ let
       };
     };
     background = {
-      type = "wallpaper";
-      path = "${config.xdg.dataHome}/wallpapers/Arch-Tan.png";
+      type = "none";
     };
     snap = {
       corners = true;
