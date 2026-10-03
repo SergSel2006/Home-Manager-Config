@@ -19,10 +19,14 @@ let
       corner_radius = 24;
       default_mode = "minimal";
     };
+    keybindings = {
+      "mod+d" = "spawn noctalia msg panel-toggle launcher";
+      "mod+l" = "spawn noctalia msg session lock";
+    };
   };
 in
 {
-  imports = [ ../noctalia/noctalia.nix ];
+  imports = [ ../noctalia/noctalia.nix ./noctalia-bars.nix ];
   # Generating configs in nix to spite original flake
   xdg.configFile = {
     "config" = {
@@ -31,7 +35,4 @@ in
     };
   };
   home.packages = [];
-  programs.fuzzel = {
-    enable = true;
-  };
 }

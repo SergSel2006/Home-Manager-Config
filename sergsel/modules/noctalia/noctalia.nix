@@ -1,9 +1,6 @@
 { config, ... }:
 
 {
-  imports = [
-    ./noctalia-bars.nix
-  ];
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
