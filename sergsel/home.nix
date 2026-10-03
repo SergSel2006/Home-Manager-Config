@@ -119,7 +119,6 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      general.import = [ "${config.home.homeDirectory}/.config/alacritty/themes/noctalia.toml" ];
       window.opacity = 0.65;
     };
   };

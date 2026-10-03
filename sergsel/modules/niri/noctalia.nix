@@ -92,4 +92,5 @@
       };
     };
   };
+  programs.alacritty.settings.general.import = [ "${config.home.homeDirectory}/.config/alacritty/themes/noctalia.toml" ];
 }

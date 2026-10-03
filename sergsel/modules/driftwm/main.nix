@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
   xdg.configFile = {
@@ -6,5 +6,9 @@
       source = ./config.toml;
       target = "driftwm/config.toml";
     };
+  };
+  home.packages = [];
+  programs.fuzzel = {
+    enable = true;
   };
 }

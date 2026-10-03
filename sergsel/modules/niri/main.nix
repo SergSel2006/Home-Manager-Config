@@ -11,10 +11,6 @@
   ];
 
   xdg.configFile = {
-    # "animations" = {
-    #   source = ../../dotfiles/niri/animations.kdl;
-    #   target = "niri/animations.kdl";
-    # };
     "binds" = {
       source = ./binds.kdl;
       target = "niri/binds.kdl";
