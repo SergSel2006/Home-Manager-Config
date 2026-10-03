@@ -6,7 +6,7 @@
 
 {
   imports = [
-    modules/qtgtk.nix
+    ../common/modules/qtgtk.nix
     modules/niri/main.nix
     modules/xdg.nix
   ];
@@ -53,6 +53,8 @@
     pkgs.fzf
     pkgs.nix-search-tv
     pkgs.ffmpeg
+    pkgs.squeekboard
+    pkgs.glib
   ];
 
   home.file = { };

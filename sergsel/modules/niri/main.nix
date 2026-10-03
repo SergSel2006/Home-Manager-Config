@@ -6,7 +6,7 @@
 {
   imports = [
     ./rules.nix
-    ../noctalia.nix
+    ./noctalia.nix
     ./animations.nix
   ];
 
