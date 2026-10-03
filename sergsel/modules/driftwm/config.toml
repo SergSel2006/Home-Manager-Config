@@ -131,7 +131,7 @@ options = "grp:caps_toggle,compose:ralt"               # XKB options (e.g., "grp
 # model = ""                 # XKB model (e.g., "pc105")
 # repeat_rate = 25           # keys/sec
 # repeat_delay = 200         # ms before repeat starts
-# layout_independent = true  # match bindings by physical key position across layouts
+# layout_independent = true  # match bindings by physical key position across layoutsА
 # num_lock = true            # num lock state on startup
 # caps_lock = false          # caps lock state on startup
 
@@ -339,6 +339,9 @@ options = "grp:caps_toggle,compose:ralt"               # XKB options (e.g., "grp
 # # type = "none"  # render no built-in background (path ignored), so a
 # #                # wlr-layer-shell wallpaper daemon (swaybg, swww, mpvpaper for live video)
 # #                # is the wallpaper. Launch it yourself; see docs/shaders.md.
+
+type = "wallpaper"
+path = "~/.local/share/wallpapers/Arch-Tan.png"
 
 # # A "shader" can also sample an image via `texture` (bound to the shader's
 # # `tex` sampler) — a procedural effect *on* your image. See docs/shaders.md.

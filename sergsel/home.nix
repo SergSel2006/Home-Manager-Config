@@ -7,8 +7,9 @@
 {
   imports = [
     ../common/main.nix
-    modules/niri/main.nix
+    # modules/niri/main.nix
     modules/xdg.nix
+    modules/driftwm/main.nix
   ];
   home.username = "sergsel";
   home.homeDirectory = "/home/sergsel";
@@ -91,6 +92,7 @@
     VISUAL = "kate -b";
     EDITOR = "nvim";
     SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
+    TERMINAL = "alacritty";
   };
 
   # Let Home Manager install and manage itself.
