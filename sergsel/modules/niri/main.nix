@@ -16,7 +16,7 @@
     #   target = "niri/animations.kdl";
     # };
     "binds" = {
-      source = ../../dotfiles/niri/binds.kdl;
+      source = ./binds.kdl;
       target = "niri/binds.kdl";
     };
   };
