@@ -53,4 +53,5 @@ in
       gtk-application-prefer-dark-theme = 1;
     };
   };
+  dconf.enable = true;
 }

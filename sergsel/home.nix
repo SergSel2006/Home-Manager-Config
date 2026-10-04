@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -50,7 +51,6 @@
     pkgs.nix-search-tv
     pkgs.ffmpeg
     pkgs.squeekboard
-    pkgs.glib
   ];
 
   home.file = { };
@@ -157,4 +157,9 @@
     key = config.age.secrets.syncthing-key.path;
   };
   nixpkgs.config.allowUnfree = true;
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      sources = with lib.hm.gvariant; [(mkTuple ["xkb" "us"]) (mkTuple ["xkb" "ru"])];
+    };
+  };
 }

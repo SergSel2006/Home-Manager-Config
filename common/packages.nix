@@ -7,7 +7,6 @@
     pkgs.zip
     pkgs.unzip
     pkgs.fzf
-
   ];
   programs.direnv = {
     enable = true;
