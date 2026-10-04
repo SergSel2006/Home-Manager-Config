@@ -23,6 +23,12 @@ let
       "mod+d" = "spawn noctalia msg panel-toggle launcher";
       "mod+l" = "spawn noctalia msg session lock";
     };
+    window-rules = [
+      {
+        app_id = "Alacritty";
+        blur   = true;
+      }
+    ];
   };
 in
 {
