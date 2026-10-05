@@ -1,0 +1,3 @@
+[submodule "sergsel/data/vk-reshade"]
+	path = sergsel/data/vk-reshade
+	url = https://github.com/renvertere/vk-reshade

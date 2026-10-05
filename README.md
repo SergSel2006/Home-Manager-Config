@@ -10,6 +10,6 @@ Mainly, niri uses Meta+WASD for window navigation, Meta+E for noctalia app cente
 
 Another major stuff is applications I use are also here and not in my system configuration (I think that system on NixOS should really have very minimal amount of software to just start DM and launch my session), except the steam. 
 
-I hope you like it if you want to try it
+I hope you like it if you want to try it. Don't forget to also pull in submodules for the good.
 
 NB!: This configuration uses default generated ssh key which is likely to be in your home, and I don't know what will happen if it is wrong, but here, so please don't foreget to either disable it or change for your setup. Look up agenix for instructions on how to configure it.
