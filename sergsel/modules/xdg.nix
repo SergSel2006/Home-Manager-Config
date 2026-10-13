@@ -30,7 +30,7 @@
         target = "wallpapers/galaxy.png";
       };
       "reshade" = {
-        source = ../data/vk-reshade/src;
+        source = ../data/reshade;
         target = "reshade";
       };
     };

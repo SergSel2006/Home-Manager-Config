@@ -8,7 +8,6 @@ let
         options = "grp:caps_toggle,compose:ralt";
       };
     };
-    autostart = [ "squeekboard" ];
     background = {
       type = "none";
     };
