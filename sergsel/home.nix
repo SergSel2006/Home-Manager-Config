@@ -7,10 +7,10 @@
 
 {
   imports = [
-    ../common/main.nix
-    # modules/niri/main.nix
+    ../common
+    modules/niri
     modules/xdg.nix
-    modules/driftwm/main.nix
+    # modules/driftwm/main.nix
   ];
   home.username = "sergsel";
   home.homeDirectory = "/home/sergsel";
@@ -27,6 +27,8 @@
 
   home.packages = [
     pkgs.yandex-music
+    pkgs.prismlauncher
+    pkgs.amberol
     pkgs.lxqt.pcmanfm-qt
     pkgs.lxqt.lxqt-archiver
     pkgs.telegram-desktop
@@ -51,6 +53,8 @@
     pkgs.nix-search-tv
     pkgs.ffmpeg
     pkgs.squeekboard
+    pkgs.mission-center
+    pkgs.zoom-us
   ];
 
   home.file = { };
@@ -97,41 +101,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  home.shell.enableShellIntegration = true;
-  programs.command-not-found.enable = true;
-  programs.bash.enable = true;
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    plugins = [
-      {
-        name = "powerlevel10k-config";
-        src = ./dotfiles;
-        file = "p10k.zsh";
-      }
-      {
-        name = "zsh-powerlevel10k";
-        src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
-        file = "powerlevel10k.zsh-theme";
-      }
-    ];
-  };
   programs.alacritty = {
     enable = true;
     settings = {
       window.opacity = 0.65;
     };
-  };
-
-  home.shellAliases = {
-    l = "eza -alh";
-    cat = "bat -pp";
-    grep = "grep --color=auto";
-    egrep = "egrep --color=auto";
-    fgrep = "fgrep --color=auto";
-    zgrep = "zgrep --color=auto";
   };
   services.kdeconnect = {
     enable = true;

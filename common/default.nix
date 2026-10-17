@@ -5,5 +5,6 @@
     ./packages.nix
     modules/qtgtk.nix
     modules/xdg.nix
+    ./shell.nix
   ];
 }

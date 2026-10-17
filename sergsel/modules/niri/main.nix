@@ -4,12 +4,6 @@
 }:
 
 {
-  imports = [
-    ./rules.nix
-    ../noctalia/noctalia.nix
-    ./animations.nix
-    ./noctalia-bars.nix
-  ];
 
   xdg.configFile = {
     "binds" = {
