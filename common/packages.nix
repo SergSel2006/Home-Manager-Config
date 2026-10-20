@@ -21,15 +21,5 @@
       user.email = "sergsel2006@mail.ru";
     };
   };
-  programs.mpv = {
-    enable = true;
-    package = (
-      pkgs.mpv.override {
-        mpv-unwrapped = pkgs.mpv-unwrapped.override {
-          ffmpeg = pkgs.ffmpeg-full;
-        };
-      }
-    );
-  };
   programs.neovim.enable = true;
 }

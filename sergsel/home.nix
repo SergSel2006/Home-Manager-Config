@@ -27,7 +27,13 @@
 
   home.packages = [
     pkgs.yandex-music
-    pkgs.prismlauncher
+    (pkgs.prismlauncher.override {
+      jdks = [
+        pkgs.temurin-jre-bin-17
+        pkgs.temurin-jre-bin-21
+        pkgs.temurin-jre-bin-27
+      ];
+    })
     pkgs.amberol
     pkgs.lxqt.pcmanfm-qt
     pkgs.lxqt.lxqt-archiver
@@ -129,6 +135,16 @@
     enable = true;
     cert = config.age.secrets.syncthing-cert.path;
     key = config.age.secrets.syncthing-key.path;
+  };
+  programs.mpv = {
+    enable = true;
+    package = (
+      pkgs.mpv.override {
+        mpv-unwrapped = pkgs.mpv-unwrapped.override {
+          ffmpeg = pkgs.ffmpeg-full;
+        };
+      }
+    );
   };
   nixpkgs.config.allowUnfree = true;
   dconf.settings = {
