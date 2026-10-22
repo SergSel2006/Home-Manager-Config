@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }:
 
@@ -11,6 +12,7 @@
       target = "niri/binds.kdl";
     };
   };
+  home.packages = with pkgs; [iio-niri];
   wayland.windowManager.niri = {
     enable = true;
     checkConfig = false;

@@ -10,7 +10,11 @@
     zgrep = "zgrep --color=auto";
   };
   home.shell.enableShellIntegration = true;
-  programs.command-not-found.enable = true;
+  programs.nix-index = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
   programs.bash.enable = true;
   programs.zsh = {
     enable = true;

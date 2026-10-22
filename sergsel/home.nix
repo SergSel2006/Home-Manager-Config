@@ -32,6 +32,7 @@
         pkgs.temurin-jre-bin-17
         pkgs.temurin-jre-bin-21
         pkgs.temurin-jre-bin-27
+        pkgs.graalvmPackages.graalvm-ce
       ];
     })
     pkgs.amberol
