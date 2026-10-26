@@ -12,12 +12,17 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      nix-index-database,
       agenix,
       ...
     }:
@@ -34,6 +39,7 @@
         modules = [
           ./sergsel/home.nix
           agenix.homeManagerModules.default
+          nix-index-database.homeModules.default
         ];
 
         # Optionally use extraSpecialArgs
