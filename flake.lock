@@ -42,11 +42,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1791836274,
-        "narHash": "sha256-VEQAoElOIHVVa/IF81P4BCz6S11YcDiTlhfVkYgS/i8=",
+        "lastModified": 1792090701,
+        "narHash": "sha256-Mpk85B06tqmFHoZ7hp0Zj0bUQCRHyfiGiQ/oFfSc9vU=",
         "owner": "skystar-p",
         "repo": "nixpkgs-cooldown",
-        "rev": "cfa01d6049282bd0188fedab9ef5942e07b99b3c",
+        "rev": "7e1c3804f28b6983c662a64f94bc670bee3951fa",
         "type": "github"
       },
       "original": {
