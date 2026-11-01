@@ -23,6 +23,10 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -33,6 +37,7 @@
       agenix,
       nix-flatpak,
       noctalia,
+      lanzaboote,
       ...
     }@inputs:
     let
@@ -46,7 +51,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./sergsel/home.nix
+          ./homes/sergsel/home.nix
           agenix.homeManagerModules.default
           nix-index-database.homeModules.default
           noctalia.homeModules.default
@@ -60,7 +65,31 @@
           pkgs.nixd
           pkgs.age
         ];
-        # TODO: Add hooks to build and install configuration
+      };
+      nixosConfigurations.Laptop-NixOS = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          lanzaboote.nixosModules.lanzaboote
+          agenix.nixosModules.default
+          ./systems/Laptop-NixOS/configuration.nix
+          ({ pkgs, lib, ... }: {
+            environment.systemPackages = [
+              pkgs.sbctl
+              agenix.packages.x86_64-linux.default
+            ];
+
+            # Lanzaboote currently replaces the systemd-boot module.
+            # This setting is usually set to true in configuration.nix
+            # generated at installation time. So we force it to false
+            # for now.
+            boot.loader.systemd-boot.enable = lib.mkForce false;
+
+            boot.lanzaboote = {
+              enable = true;
+              pkiBundle = "/var/lib/sbctl";
+            };
+          })
+        ];
       };
     };
 }
