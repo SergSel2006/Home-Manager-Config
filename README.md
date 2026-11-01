@@ -1,6 +1,6 @@
 # My Personal home manager configuration
 
-Note: Direnv and `nix develop` shells are available with `nil` LSP and `age` command for convenience if you ever wanted to fork my configuration.
+Note: Direnv and `nix develop` shells are available with `nixd` LSP and `age` command for convenience if you ever wanted to fork my configuration.
 
 This configuration uses flake, but mostly it is without 3rd party flakes, only one being agenix, without it I could not manage my syncthing node and put it into public.
 

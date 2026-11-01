@@ -5,9 +5,6 @@
     enable = true;
     systemd.enable = true;
     settings = {
-      audio = {
-        enable-sounds = true;
-      };
       calendar = {
         enabled = true;
       };

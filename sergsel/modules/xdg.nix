@@ -30,7 +30,11 @@
         target = "wallpapers/galaxy.png";
       };
       "reshade" = {
-        source = ../data/reshade;
+        source = pkgs.fetchgit {
+          url = "https://github.com/renvertere/vk-reshade.git";
+          rev = "94df8e74251a5738e8b5676ed9dbd2474ceaed00";
+          hash = "sha256-QSICx4ofZHRPInytzxEu2F8tCswzWN/kB6Rgh0Au7Zg=";
+        };
         target = "reshade";
       };
     };

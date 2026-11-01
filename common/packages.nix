@@ -11,7 +11,6 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-    enableGitIntegration = true;
     enableZshIntegration = true;
   };
   programs.git = {

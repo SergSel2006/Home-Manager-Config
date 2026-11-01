@@ -2,10 +2,12 @@
 
 {
   imports = [
-    ./rules.nix
+    # ./rules.nix
     ../noctalia/noctalia.nix
-    ./animations.nix
+    # ./animations.nix
     ./noctalia-bars.nix
-    ./main.nix
+    # ./main.nix  TODO: Fix Niri configuration
+    # Just placing kdl files under home-manager control
+    # should be fine.
   ];
 }

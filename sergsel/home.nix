@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
@@ -10,6 +11,7 @@
     ../common
     modules/niri
     modules/xdg.nix
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     # modules/driftwm/main.nix
   ];
   home.username = "sergsel";
@@ -31,11 +33,13 @@
       jdks = [
         pkgs.temurin-jre-bin-17
         pkgs.temurin-jre-bin-21
-        pkgs.temurin-jre-bin-27
+        pkgs.temurin-jre-bin-25
         pkgs.graalvmPackages.graalvm-ce
       ];
     })
     pkgs.amberol
+    pkgs.flatpak
+    pkgs.opencode
     pkgs.lxqt.pcmanfm-qt
     pkgs.lxqt.lxqt-archiver
     pkgs.telegram-desktop
@@ -63,6 +67,13 @@
     pkgs.mission-center
     pkgs.zoom-us
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      { appId = "io.github.moooossee.Moose"; origin = "flathub"; }
+    ];
+  };
 
   home.file = { };
 
@@ -104,6 +115,7 @@
     EDITOR = "nvim";
     SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
     TERMINAL = "alacritty";
+    LC_ALL = "ru_RU.UTF-8";
   };
 
   # Let Home Manager install and manage itself.

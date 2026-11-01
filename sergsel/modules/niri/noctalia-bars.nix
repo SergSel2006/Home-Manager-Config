@@ -23,7 +23,7 @@
           accordion = true;
           accordion_direction = "end";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g1";
           members = [
             "launcher"
@@ -38,7 +38,7 @@
           accordion = false;
           accordion_direction = "end";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g2";
           members = [
             "notifications"
@@ -52,7 +52,7 @@
           accordion = true;
           accordion_direction = "start";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g3";
           members = [
             "network"
@@ -65,7 +65,7 @@
           accordion = false;
           accordion_direction = "end";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g4";
           members = [
             "brightness"
@@ -79,7 +79,7 @@
           accordion = true;
           accordion_direction = "start";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g5";
           members = [
             "control-center"
@@ -92,7 +92,7 @@
           accordion = false;
           accordion_direction = "end";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g6";
           members = [
             "nightlight"
@@ -106,7 +106,7 @@
           accordion = true;
           accordion_direction = "start";
           enabled = true;
-          fill = "surface_variant";
+          fill = "surface_container";
           id = "g7";
           members = [
             "temp"
