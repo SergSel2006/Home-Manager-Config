@@ -72,6 +72,7 @@
     enable = true;
     packages = [
       { appId = "io.github.moooossee.Moose"; origin = "flathub"; }
+      { appId = "com.valvesoftware.SteamLink"; origin = "flathub"; }
     ];
   };
 
@@ -116,6 +117,7 @@
     SSH_ASKPASS = "${pkgs.lxqt.lxqt-openssh-askpass}/bin/lxqt-openssh-askpass";
     TERMINAL = "alacritty";
     LC_ALL = "ru_RU.UTF-8";
+    XDG_DATA_DIRS = "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
   };
 
   # Let Home Manager install and manage itself.
@@ -159,6 +161,9 @@
       }
     );
   };
+
+  services.ssh-agent.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {

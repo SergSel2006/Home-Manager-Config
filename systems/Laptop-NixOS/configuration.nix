@@ -127,8 +127,8 @@
         file = secrets/i2pd-site.age;
         path = "/var/lib/i2pd/site.dat";
         mode = "644";
-        owner = "nobody";
-        group = "nogroup";
+        owner = "i2pd";
+        group = "i2pd";
       };
       tor-site = {
         file = secrets/tor-site.age;
@@ -199,6 +199,7 @@
     pkgs.virtio-win
     pkgs.virtiofsd
     pkgs.apparmor-parser
+    pkgs.xwayland-satellite
   ];
 
   services.displayManager.enable = true;
@@ -238,7 +239,7 @@
 
   # List services that you want to enable:
 
-  # services.btrfs.autoScrub.enable = true;
+  services.btrfs.autoScrub.enable = true;
 
   services.beesd.filesystems = {
     root = {
@@ -301,7 +302,7 @@
   };
   services.i2pd = {
     enable = true;
-    port = 49723;
+    port = 49723; # please change this on other setupts
     inTunnels = {
       "site" = {
         type = "http";
@@ -376,8 +377,18 @@
       "flakes"
     ];
     secret-key-files = [ config.age.secrets.nix-key.path ];
+    system-features = ["nixos-test" "benchmark" "big-parallel" "kvm"];
   };
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    rocmSupport = true;
+  };
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 63;
+    writebackDevice = "/dev/sda3";
+  };
 
   services.zerotierone = {
     enable = true;
@@ -385,6 +396,7 @@
       "c7c8172af1d8956c"
     ];
   };
+  services.flatpak.enable = true;
 
   programs.steam = {
     enable = true;
@@ -397,6 +409,9 @@
       enable = true;
       enable32Bit = true;
     };
+    amdgpu.opencl.enable = true;
+    amdgpu.overdrive.enable = true;
+    amdgpu.zluda.enable = true;
     sensor = {
       iio.enable = true;
     };
@@ -405,12 +420,8 @@
   services.ollama = {
     enable = true;
     package = pkgs.ollama-vulkan;
-    loadModels = [
-      "qwen3.5:4b"
-      "qwen2.5-coder:7b"
-    ];
     environmentVariables.OLLAMA_IGPU_ENABLE = "1";
-    environmentVariables.OLLAMA_CONTEXT_LENGTH = "131072";
+    environmentVariables.OLLAMA_CONTEXT_LENGTH = "65536";
     environmentVariables.HTTPS_PROXY = "http://127.0.0.1:8118";
     environmentVariables.https_proxy = "http://127.0.0.1:8118";
   };
