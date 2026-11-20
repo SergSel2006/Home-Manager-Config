@@ -37,6 +37,12 @@
       "rd.udev.log_level=3"
       "rd.systemd.show_status=auto"
     ];
+    kernel.sysctl = {
+      "vm.swappiness" = 180;
+      "vm.page-cluster" = 0;
+      "vm.watermark_scale_factor" = 125;
+      "vm.watermark_boost_factor" = 0;
+    };
   };
 
   fileSystems = {
@@ -311,6 +317,17 @@
         keys = "site.dat";
       };
     };
+    proto = {
+      http = {
+        enable = true;
+      };
+      httpProxy = {
+        enable = true;
+      };
+      socksProxy = {
+        enable = true;
+      };
+    };
   };
   systemd.services.i2pd.serviceConfig.LimitNOFILE = 4096; #i2pd has a ton of profiles to open on normal install... I guess this is needed...
 
@@ -344,11 +361,6 @@
       ];
     };
   };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
@@ -386,7 +398,7 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
-    memoryPercent = 63;
+    memoryPercent = 100;
     writebackDevice = "/dev/sda3";
   };
 
